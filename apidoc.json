@@ -1,0 +1,7 @@
+{
+    "name": "Melp ApiDoc",
+    "version": "0.1.0",
+    "description": "Basic REST API for restaurants. Contains the CRUD along with an enpoint to perform a statistics query based on a circular area determined by the longitude, latitude and radius of the same.",
+    "title": "Melp Api Rest Doccumentation",
+    "url" : "https://api.github.com/v1"
+}
