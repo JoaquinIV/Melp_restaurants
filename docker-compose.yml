@@ -1,0 +1,24 @@
+version: "3.8"
+services:
+    api:
+        container_name: melp_api
+        ports:
+          - 3000:3000
+        build:
+          context: .
+          dockerfile: Dockerfile
+        depends_on:
+          - dbpostgres
+        restart: always
+    dbpostgres:
+        container_name: dbpostgres
+        image: postgis/postgis:15-3.4-alpine
+        restart: always
+        environment:
+          POSTGRES_PASSWORD: mysecretpassword
+          POSTGRES_USER: postgresuser
+          POSTGRES_DB: postgres
+        ports:
+          - 5432:5432
+        volumes:
+          - ./init.sql:/docker-entrypoint-initdb.d/init.sql
