@@ -1,0 +1,251 @@
+{
+	"info": {
+		"_postman_id": "897c231a-d3b1-493a-be42-ea84f8863e1a",
+		"name": "Melp",
+		"description": "**Author: Valente Ignacio**\n\n**Email: ignaciovlnt@gmail.com**\n\n---\n\n_**Descripcion**_\n\nBasic REST API for restaurants. Contains the CRUD along with an enpoint to perform a statistics query based on a circular area determined by the longitude, latitude and radius of the same.\n\n_**Requirements**_\n\n- Have docker installed on your computer. ([https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/))\n- Have docker-compose installed. ([https://docs.docker.com/compose/install/](https://docs.docker.com/compose/install/))\n    \n\n_**How to start the project**_\n\n1. Clone the project on your computer in the directory of your choice.\n2. Inside the directory containing the project run the following command `docker-compose up`",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23581360"
+	},
+	"item": [
+		{
+			"name": "Get Restaurants Statiscs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{host}}:{{port}}/restaurants/statistics?latitude=x&longitude=y&radius=z",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"restaurants",
+						"statistics"
+					],
+					"query": [
+						{
+							"key": "latitude",
+							"value": "x"
+						},
+						{
+							"key": "longitude",
+							"value": "y"
+						},
+						{
+							"key": "radius",
+							"value": "z"
+						}
+					]
+				},
+				"description": "- Latitude and longitude must be floating point numbers.\n- The radius should be in metres."
+			},
+			"response": []
+		},
+		{
+			"name": "Get Restaurants",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{host}}:{{port}}/restaurants",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"restaurants"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get One Restaurant",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{host}}:{{port}}/restaurants/:id",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"restaurants",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Restaurant",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"rating\": 0,\r\n        \"name\": \"string\",\r\n        \"site\": \"string\",\r\n        \"email\": \"string\",\r\n        \"phone\": \"string\",\r\n        \"street\": \"string\",\r\n        \"city\": \"string\",\r\n        \"state\": \"string\",\r\n        \"lat\": 0.0,\r\n        \"lng\": 0.0\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{host}}:{{port}}/restaurants",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"restaurants"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Restaurant",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"rating\": 0,\r\n        \"name\": \"string\",\r\n        \"site\": \"string\",\r\n        \"email\": \"string\",\r\n        \"phone\": \"string\",\r\n        \"street\": \"string\",\r\n        \"city\": \"string\",\r\n        \"state\": \"string\",\r\n        \"lat\": 0.0,\r\n        \"lng\": 0.0\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{host}}:{{port}}/restaurants/:id",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"restaurants",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				},
+				"description": "- All parameters inside the body are required"
+			},
+			"response": []
+		},
+		{
+			"name": "Partial Update Restaurant",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"rating\": 0,\r\n        \"name\": \"string\",\r\n        \"site\": \"string\",\r\n        \"email\": \"string\",\r\n        \"phone\": \"string\",\r\n        \"street\": \"string\",\r\n        \"city\": \"string\",\r\n        \"state\": \"string\",\r\n        \"lat\": 0.0,\r\n        \"lng\": 0.0\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{host}}:{{port}}/restaurants/:id",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"restaurants",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				},
+				"description": "- Parameters inside the body are optional.\n    \n- This enpoint allows partial modification of the restaurant."
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Restaurant",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{host}}:{{port}}/restaurants/:id",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"restaurants",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "port",
+			"value": "3000",
+			"type": "string"
+		},
+		{
+			"key": "host",
+			"value": "localhost",
+			"type": "string"
+		}
+	]
+}
