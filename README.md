@@ -10,6 +10,10 @@
 
 > Email: ignaciovlnt@gmail.com
 
+## MELP Microservices
+- [Restaurant microservice] (https://github.com/JoaquinIV/Melp_restaurants)
+- [User microservice] (https://github.com/JoaquinIV/Melp_users)
+
 ## Table of contents
 
 * [Project description](#project-description)
